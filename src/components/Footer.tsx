@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div className="relative w-full flex justify-between font-semibold bg-blueDefault px-24 py-10 text-white">
       <Image src={sheetFooter} className="absolute -top-20 -left-48" alt="" />
-      <Image src={logoFooter} alt="" />
+      <Image src={logoFooter} alt="Logo do rodapé" className="size-32" />
       <div className="z-10">
         <p>Avenida Dom Jorge Marcos de Oliveira n° 50</p>
         <p>Vila Guiomar - Santo André - SP</p>
