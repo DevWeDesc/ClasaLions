@@ -1,72 +1,42 @@
 "use client";
-import { ReactElement, useState } from "react";
-import { FaBuildingColumns, FaCircleQuestion } from "react-icons/fa6";
-import { IoIosBook, IoIosHome } from "react-icons/io";
-
-interface INavData {
-  icon: ReactElement;
-  text: string;
-}
-const navData: INavData[] = [
-  { icon: <IoIosHome />, text: "Home" },
-  { icon: <IoIosBook />, text: "Programas" },
-  { icon: <FaBuildingColumns />, text: "Institucional" },
-  { icon: <FaCircleQuestion />, text: "Dúvidas frequentes" },
-];
-
-export const NavGeneric = () => {
-  const [navSelected, setNavSelected] = useState("Home");
-
-  return (
-    <div className="w-full flex items-center justify-center xl:gap-16 2xl:gap-32">
-      {navData.map((data, index) => (
-        <div
-          onClick={() => setNavSelected(data.text)}
-          key={index}
-          className={`transition-all flex items-center gap-1 cursor-pointer relative ${
-            navSelected === data.text && "text-yellowButton"
-          }`}
-        >
-          {data.icon} <p className="font-semibold">{data.text}</p>
-          {navSelected === data.text && (
-            <div className="absolute h-1 w-3/4 rounded-full bg-yellowButton -bottom-7 left-1/2 -translate-x-1/2 transition-all" />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
 
 import * as React from "react";
+import Link from "next/link";
+
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
-  NavigationMenuList,
+  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
+  NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuContent,
-} from "@radix-ui/react-navigation-menu";
-import { navigationMenuTriggerStyle } from "../ui/navigation-menu";
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { FaBuildingColumns, FaCircleQuestion } from "react-icons/fa6";
+import { IoIosHome, IoIosBook } from "react-icons/io";
 
-export function Nav() {
-  const [navSelected, setNavSelected] = useState("Home");
+export const NavigationMenuHeader = () => {
+  const [navSelected, setNavSelected] = React.useState(["Home"]);
 
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <a href="/docs">
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={`${navigationMenuTriggerStyle()} ${
-                navSelected === "Home" && "text-yellowButton"
+                navSelected.includes("Home") && "text-yellowButton"
               }`}
             >
-              <div className="flex gap-1 items-center">
-                <IoIosHome /> Home
+              <div className="flex gap-1 items-center relative">
+                <IoIosHome /> <p> Home</p>
+                {navSelected.includes("Home") && (
+                  <div className="absolute w-4/5 left-1/2 -bottom-6 -translate-x-1/2 h-1 rounded-full bg-yellowButton"></div>
+                )}
               </div>
             </NavigationMenuLink>
-          </a>
+          </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
@@ -78,13 +48,13 @@ export function Nav() {
           <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
             <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
               <ListItem
-                href=""
+                href="/"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Programa de integração ao mundo do trabalho - Integrar
               </ListItem>
               <ListItem
-                href=""
+                href="/"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Serviço de convivência e fortalecimento de vínculos - SCFV
@@ -93,13 +63,13 @@ export function Nav() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/docs">
+          <Link href="/docs">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <div className="flex gap-1 items-center">
                 <FaBuildingColumns /> Institucional
               </div>
             </NavigationMenuLink>
-          </a>
+          </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
@@ -110,13 +80,13 @@ export function Nav() {
           <NavigationMenuContent className=" bg-yellowButton border-b-4 border-b-blueDefault">
             <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
               <ListItem
-                href=""
+                href="/"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Programa de integração ao mundo do trabalho - Integrar
               </ListItem>
               <ListItem
-                href=""
+                href="/"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Serviço de convivência e fortalecimento de vínculos - SCFV
@@ -127,7 +97,7 @@ export function Nav() {
       </NavigationMenuList>
     </NavigationMenu>
   );
-}
+};
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -136,8 +106,8 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
-          ref={ref}
+        <Link
+          href={ref as any}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
@@ -145,8 +115,10 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug">{children}</p>
-        </a>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
