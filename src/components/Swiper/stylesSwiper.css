@@ -1,0 +1,90 @@
+.mySwiperWithBanner {
+  width: 90%;
+  height: 500px;
+  padding: 0 6%;
+}
+
+.mySwiperWithBanner .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mySwiperWithBanner .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mySwiperWithBanner .swiper-button-prev,
+.mySwiperWithBanner .swiper-button-next {
+  position: absolute;
+  background: rgb(0, 0, 0, 0.1);
+  padding: 22px;
+  border-radius: 50%;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+.mySwiperWithBanner
+  .swiper-button-prev.mySwiperWithBanner
+  .swiper-button-disabled,
+.mySwiperWithBanner
+  .swiper-button-next.mySwiperWithBanner
+  .swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.mySwiperWithBanner
+  .swiper-button-prev.mySwiperWithBanner
+  .swiper-button-hidden,
+.mySwiperWithBanner
+  .swiper-button-next.mySwiperWithBanner
+  .swiper-button-hidden {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-navigation-disabled .mySwiperWithBanner .swiper-button-prev,
+.swiper-navigation-disabled .mySwiperWithBanner .swiper-button-next {
+  display: none !important;
+}
+.mySwiperWithBanner .swiper-button-prev svg,
+.mySwiperWithBanner .swiper-button-next svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+}
+.swiper-rtl .mySwiperWithBanner .swiper-button-prev svg,
+.swiper-rtl .mySwiperWithBanner .swiper-button-next svg {
+  transform: rotate(180deg);
+}
+.mySwiperWithBanner .swiper-button-prev,
+.swiper-rtl .mySwiperWithBanner .swiper-button-next {
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+}
+.mySwiperWithBanner .swiper-button-next,
+.swiper-rtl .mySwiperWithBanner .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+}
+.mySwiperWithBanner .swiper-button-lock {
+  display: none;
+}
+/* Navigation font start */ /* Navigation font end */
