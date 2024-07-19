@@ -8,8 +8,7 @@ import SwiperPartners from "@/components/SwiperPartners/SwiperPartners";
 
 export default function Home() {
   return (
-    <div className="relative h-full overflow-hidden">
-      <Header />
+    <>
       <div className="my-32 relative mb-80 xl:mb-96">
         <Image
           className="absolute left-10"
@@ -31,6 +30,6 @@ export default function Home() {
         <SwiperPartners />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
