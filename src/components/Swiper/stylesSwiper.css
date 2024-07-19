@@ -1,13 +1,14 @@
 .mySwiperWithBanner {
-  width: 90%;
+  width: 85%;
   height: 500px;
-  padding: 0 6%;
+  padding: 0 5%;
 }
 
 .mySwiperWithBanner .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
+  /* padding: 0 6%; */
 
   /* Center slide text vertically */
   display: flex;

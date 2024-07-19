@@ -59,6 +59,12 @@ export const NavigationMenuHeader = () => {
               >
                 Serviço de convivência e fortalecimento de vínculos - SCFV
               </ListItem>
+              <ListItem
+                href="/"
+                className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
+              >
+                Programa de aprendizagem - Socioaprendizagem
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

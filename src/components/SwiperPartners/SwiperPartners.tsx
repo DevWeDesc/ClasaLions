@@ -12,18 +12,14 @@ import "swiper/css/navigation";
 import "./stylesswiperPartners.css";
 
 // import required modules
-import { Scrollbar, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import Image from "next/image";
 
 export default function SwiperPartners() {
   return (
     <>
       <Swiper
-        scrollbar={{
-          hide: true,
-          enabled: true,
-        }}
-        modules={[Scrollbar, Navigation]}
+        modules={[Navigation]}
         navigation
         className="mySwiperPartner"
         slidesPerView={3}
@@ -58,14 +54,14 @@ export default function SwiperPartners() {
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            className="object-contain size-10"
+            className="object-contain size-28"
             alt="Imagem do carousel"
             src={primaryImageSwiper}
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            className="object-contain size-10"
+            className="object-contain size-28"
             alt="Imagem do carousel"
             src={primaryImageSwiper}
           />
