@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import primaryImageSwiper from "@/../public/assets/PrimaryImageSwiper.png";
-import secondaryImageSwiper from "@/../public/assets/secondaryImageSwiper.png";
+import secondaryImageSwiper from "@/../public/assets/SecondaryImageSwiper.png";
 
 import "swiper/css";
 import "swiper/css/scrollbar";

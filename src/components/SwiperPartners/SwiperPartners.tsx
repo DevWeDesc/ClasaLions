@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 
-import "./stylesswiperPartners.css";
+import "./stylesSwiperPartners.css";
 
 // import required modules
 import { Navigation } from "swiper/modules";
