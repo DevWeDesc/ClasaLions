@@ -18,14 +18,14 @@ import { IoIosHome, IoIosBook } from "react-icons/io";
 import process from "process";
 
 export const NavigationMenuHeader = () => {
-  const [navSelect, setNavSelected] = React.useState(
-    window.location.href.substring(
+  const [navSelect, setNavSelected] = React.useState(() => {
+    const currentUrl = window.location.href.substring(
       process.env.NEXT_PUBLIC_URL_DEV?.length as number
-    )
-  );
-  var currentUrl = window.location.href.substring(
-    process.env.NEXT_PUBLIC_URL_DEV?.length as number
-  );
+    );
+
+    return currentUrl;
+  });
+
   const conditionalStyle = (href: string) => navSelect === href;
 
   return (
