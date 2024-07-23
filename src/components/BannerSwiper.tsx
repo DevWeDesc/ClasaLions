@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const BannerSwiper = () => {
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 w-[82%] m-auto bg-blueDefault rounded-3xl grid grid-cols-2">
+    <div className="absolute left-1/2 -translate-x-1/2 w-[88%] m-auto bg-blueDefault rounded-3xl grid grid-cols-2">
       <div className="relative flex flex-col items-center justify-center w-full text-white py-8 border-r">
         <Image
           className="w-20 absolute left-7 top-16"
