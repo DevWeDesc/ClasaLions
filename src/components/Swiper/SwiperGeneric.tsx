@@ -2,8 +2,8 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import primaryImageSwiper from "@/../public/assets/PrimaryImageSwiper.png";
-import secondaryImageSwiper from "@/../public/assets/SecondaryImageSwiper.png";
+import primaryImageSwiper from "@/../public/assets/PrimaryImageSwiper.jpg";
+import secondaryImageSwiper from "@/../public/assets/SecondaryImageSwiper.jpg";
 
 import "swiper/css";
 import "swiper/css/scrollbar";
@@ -43,10 +43,18 @@ export default function SwiperGeneric() {
         className="mySwiperWithBanner"
       >
         <SwiperSlide>
-          <Image alt="Imagem do carousel" src={primaryImageSwiper} />
+          <Image
+            className="object-contain"
+            alt="Imagem do carousel"
+            src={primaryImageSwiper}
+          />
         </SwiperSlide>
         <SwiperSlide>
-          <Image alt="Imagem do carousel" src={secondaryImageSwiper} />
+          <Image
+            className="object-contain"
+            alt="Imagem do carousel"
+            src={secondaryImageSwiper}
+          />
         </SwiperSlide>
       </Swiper>
     </>

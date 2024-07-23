@@ -2,6 +2,7 @@ import logoHeader from "@/../public/assets/LogoHeader.png";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { NavigationMenuHeader } from "./NavigationMenuHeader";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -11,7 +12,9 @@ export const Header = () => {
         <NavigationMenuHeader />
       </div>
       <div className="flex gap-10 justify-end items-center">
-        <Button variant="header">Inscreva-se</Button>
+        <Link target="_blank" href="https://forms.gle/hhcngM3JVNEKu5vE9">
+          <Button variant="header">Inscreva-se</Button>
+        </Link>
         <Button variant="header">Contrate</Button>
       </div>
     </div>

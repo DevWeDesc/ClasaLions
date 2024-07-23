@@ -3,6 +3,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import primaryImageSwiper from "@/../public/assets/PrimaryPartner.png";
+import logoCoop from "@/../public/assets/logoCoop.jpg";
+import logoGTI from "@/../public/assets/logoGTI.png";
+import logoClube from "@/../public/assets/logoClube.png";
+import logoWm from "@/../public/assets/logoWm.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,18 +16,24 @@ import "swiper/css/navigation";
 import "./stylesSwiperPartners.css";
 
 // import required modules
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 export default function SwiperPartners() {
   return (
     <>
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         navigation
         className="mySwiperPartner"
         slidesPerView={3}
         spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        loop
         style={
           {
             "--swiper-navigation-size": "26px",
@@ -40,30 +50,30 @@ export default function SwiperPartners() {
         </SwiperSlide>
         <SwiperSlide>
           <Image
-            className="object-contain size-28"
+            className="object-contain size-28 p-4"
             alt="Imagem do carousel"
-            src={primaryImageSwiper}
+            src={logoCoop}
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="object-contain size-28"
             alt="Imagem do carousel"
-            src={primaryImageSwiper}
+            src={logoGTI}
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="object-contain size-28"
             alt="Imagem do carousel"
-            src={primaryImageSwiper}
+            src={logoClube}
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
             className="object-contain size-28"
             alt="Imagem do carousel"
-            src={primaryImageSwiper}
+            src={logoWm}
           />
         </SwiperSlide>
       </Swiper>
