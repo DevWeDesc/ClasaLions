@@ -73,14 +73,14 @@ export const NavigationMenuHeader = () => {
               </ListItem>
               <ListItem
                 onClick={() => setNavSelected("/programs")}
-                href="/programs"
+                href="/scfv"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Serviço de convivência e fortalecimento de vínculos - SCFV
               </ListItem>
               <ListItem
                 onClick={() => setNavSelected("/programs")}
-                href="/programs"
+                href="/learning"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
                 Programa de aprendizagem - Socioaprendizagem
@@ -89,7 +89,7 @@ export const NavigationMenuHeader = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs">
+          <Link href="/institution">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <div className="flex gap-1 items-center">
                 <FaBuildingColumns /> Institucional
@@ -106,16 +106,10 @@ export const NavigationMenuHeader = () => {
           <NavigationMenuContent className=" bg-yellowButton border-b-4 border-b-blueDefault">
             <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
               <ListItem
-                href="/programs"
+                href="/faq"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
-                Programa de integração ao mundo do trabalho - Integrar
-              </ListItem>
-              <ListItem
-                href="/programs"
-                className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
-              >
-                Serviço de convivência e fortalecimento de vínculos - SCFV
+                FAQ/Dúvidas frequentes
               </ListItem>
             </ul>
           </NavigationMenuContent>

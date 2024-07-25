@@ -1,3 +1,4 @@
+"use client";
 import logoHeader from "@/../public/assets/LogoHeader.png";
 import { Button } from "../ui/button";
 import Image from "next/image";

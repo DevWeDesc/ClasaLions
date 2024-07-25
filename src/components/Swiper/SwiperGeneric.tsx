@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 
 import "./stylesSwiper.css";
 
-import { Scrollbar, Navigation, Pagination } from "swiper/modules";
+import { Scrollbar, Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 
 export default function SwiperGeneric() {
@@ -39,7 +39,12 @@ export default function SwiperGeneric() {
         }}
         spaceBetween={100}
         navigation
-        modules={[Scrollbar, Navigation, Scrollbar, Pagination]}
+        modules={[Scrollbar, Navigation, Scrollbar, Pagination, Autoplay]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop
         className="mySwiperWithBanner"
       >
         <SwiperSlide>
