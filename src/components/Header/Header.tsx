@@ -16,7 +16,9 @@ export const Header = () => {
         <Link target="_blank" href="https://forms.gle/hhcngM3JVNEKu5vE9">
           <Button variant="header">Inscreva-se</Button>
         </Link>
-        <Button variant="header">Contrate</Button>
+        <Link target="_blank" href="https://wa.me/message/PAQSBS4A2N3UK1">
+          <Button variant="header">Contrate</Button>
+        </Link>
       </div>
     </div>
   );
