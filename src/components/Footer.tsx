@@ -14,22 +14,25 @@ interface SocialMedia {
 const SocialMediaImpl: SocialMedia[] = [
   {
     href: "https://www.instagram.com/clasa.oficial?igsh=MTR0MWZtN2NwZ2Rjcg==",
-    icon: <FiInstagram className="text-2xl" />,
+    icon: <FiInstagram className="text-2xl hover:text-white/85" />,
   },
   {
     href: "https://www.facebook.com/share/UZHDV4EKZe1LPqJ2/?mibextid=qi2Omg",
-    icon: <FiFacebook className="text-2xl" />,
+    icon: <FiFacebook className="text-2xl hover:text-white/85" />,
   },
   {
     href: "https://www.linkedin.com/company/clasalions/",
-    icon: <FiLinkedin className="text-2xl" />,
+    icon: <FiLinkedin className="text-2xl hover:text-white/85" />,
   },
 ];
 
-export const Footer = () => {
+interface IFooter {
+  sheeetsVisible: boolean;
+}
+
+export const Footer = ({ sheeetsVisible }: IFooter) => {
   return (
     <div className="relative w-full flex justify-between font-semibold bg-blueDefault px-24 py-10 text-white">
-      <Image src={sheetFooter} className="absolute -top-20 -left-48" alt="" />
       <Image src={logoFooter} alt="Logo do rodapé" className="size-32" />
       <div className="z-10">
         <p>Avenida Dom Jorge Marcos de Oliveira n° 50</p>
@@ -47,11 +50,21 @@ export const Footer = () => {
           ))}
         </div>
       </div>
-      <Image
-        src={sheetFooter}
-        className="absolute -top-20 -right-48 rotate-[115deg] bg-blue"
-        alt="Logo rodapé"
-      />
+
+      {sheeetsVisible && (
+        <>
+          <Image
+            src={sheetFooter}
+            className="absolute -top-20 -left-48"
+            alt=""
+          />
+          <Image
+            src={sheetFooter}
+            className="absolute -top-20 -right-48 rotate-[115deg] bg-blue"
+            alt="Logo rodapé"
+          />{" "}
+        </>
+      )}
 
       <FooterSheets />
     </div>
