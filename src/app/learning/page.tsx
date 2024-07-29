@@ -1,5 +1,5 @@
 import { Footer } from "@/components/Footer";
-import React from "react";
+import React, { useRef } from "react";
 
 export default function Learning() {
   return (
@@ -59,7 +59,8 @@ export default function Learning() {
           </p>
         </div>
       </div>
-      <Footer />
+
+      <Footer sheeetsVisible />
     </>
   );
 }

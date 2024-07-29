@@ -59,7 +59,7 @@ export default function SCFV() {
           </p>
         </div>
       </div>
-      <Footer />
+      <Footer sheeetsVisible />
     </>
   );
 }

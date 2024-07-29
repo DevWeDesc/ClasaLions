@@ -51,7 +51,7 @@ export default function Programs() {
           </p>
         </div>
       </div>
-      <Footer />
+      <Footer sheeetsVisible />
     </>
   );
 }

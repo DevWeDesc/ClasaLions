@@ -6,7 +6,7 @@ import { About } from "./About";
 export default function Institution() {
   return (
     <>
-      <div className="my-[92px] relative mb-80 xl:mb-96">
+      <div className="mt-[92px]">
         <Image
           src={imageClasa}
           className="object-cover"
@@ -14,7 +14,7 @@ export default function Institution() {
         />
         <About />
       </div>
-      <Footer />
+      <Footer sheeetsVisible={false} />
     </>
   );
 }
