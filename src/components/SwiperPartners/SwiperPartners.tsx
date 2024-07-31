@@ -17,17 +17,26 @@ import "./stylesSwiperPartners.css";
 
 // import required modules
 import { Autoplay, Navigation } from "swiper/modules";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { useEffect, useState } from "react";
 
-export default function SwiperPartners() {
+export interface ISwiperPartners {
+  data: string[] | StaticImageData[];
+}
+
+export default function SwiperPartners({ data }: ISwiperPartners) {
+  const [currentPath, setCurrentPath] = useState("");
+  useEffect(() => {
+    if (window) setCurrentPath(window?.location.pathname);
+  }, []);
   return (
     <>
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
-        className="mySwiperPartner"
+        className={`mySwiperPartner`}
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={50}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -38,44 +47,21 @@ export default function SwiperPartners() {
           {
             "--swiper-navigation-size": "26px",
             "--swiper-navigation-color": "#000",
+            width: currentPath.includes("institution") ? "100%" : "50%",
           } as React.CSSProperties
         }
       >
-        <SwiperSlide>
-          <Image
-            className="object-contain size-28"
-            alt="Imagem do carousel"
-            src={primaryImageSwiper}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            className="object-contain size-28 p-4"
-            alt="Imagem do carousel"
-            src={logoCoop}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            className="object-contain size-28"
-            alt="Imagem do carousel"
-            src={logoGTI}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            className="object-contain size-28"
-            alt="Imagem do carousel"
-            src={logoClube}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            className="object-contain size-28"
-            alt="Imagem do carousel"
-            src={logoWm}
-          />
-        </SwiperSlide>
+        {data.map((data, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              className={`object-contain ${
+                currentPath.includes("institution") ? "size-44" : "size-32"
+              }`}
+              alt="Imagem do carousel"
+              src={data}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );
