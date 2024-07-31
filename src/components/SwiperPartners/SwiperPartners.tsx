@@ -21,7 +21,7 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
 export interface ISwiperPartners {
-  data: string[] | StaticImageData[];
+  data: string[] | StaticImageData[] | any[];
 }
 
 export default function SwiperPartners({ data }: ISwiperPartners) {
@@ -47,21 +47,26 @@ export default function SwiperPartners({ data }: ISwiperPartners) {
           {
             "--swiper-navigation-size": "26px",
             "--swiper-navigation-color": "#000",
-            width: currentPath.includes("institution") ? "100%" : "50%",
+            width: currentPath.includes("institution") ? "100%" : "60%",
+            alignItems: "center",
+            justifyContent: "center",
           } as React.CSSProperties
         }
       >
-        {data.map((data, index) => (
-          <SwiperSlide key={index}>
-            <Image
-              className={`object-contain ${
-                currentPath.includes("institution") ? "size-44" : "size-32"
-              }`}
-              alt="Imagem do carousel"
-              src={data}
-            />
-          </SwiperSlide>
-        ))}
+        {data.map((data, index) => {
+          console.log(data);
+          return (
+            <SwiperSlide key={index}>
+              <Image
+                className={`object-contain ${
+                  currentPath.includes("institution") ? "h-36" : "h-32"
+                } ${data?.src.toString().includes("Coop") ? "p-4" : "p-0"}`}
+                alt="Imagem do carousel"
+                src={data}
+              />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );
