@@ -1,10 +1,10 @@
 import { BannerSwiper } from "@/components/BannerSwiper";
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header/Header";
 import SwiperGeneric from "@/components/Swiper/SwiperGeneric";
 import Image from "next/image";
 import sheet from "@/../public/assets/sheet.png";
 import SwiperPartners from "@/components/SwiperPartners/SwiperPartners";
+import { PartnersData } from "@/data/PertnersData";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
         <p className="text-5xl text-center text-blueFontHeader font-semibold">
           Parceiros
         </p>
-        <SwiperPartners />
+        <SwiperPartners data={PartnersData} />
       </div>
       <Footer sheeetsVisible />
     </>

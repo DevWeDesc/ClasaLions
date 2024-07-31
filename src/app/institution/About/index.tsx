@@ -1,12 +1,13 @@
 import React from "react";
 import { CardAbout, ICardAbout } from "./CardAbout";
-import { Button } from "@/components/ui/button";
 import { TbNotes } from "react-icons/tb";
 import Image from "next/image";
 import logoCebas from "@/../public/assets/cebasLogo.png";
 import logoCmdca from "@/../public/assets/cmdcaLogo.png";
 import logoCmas from "@/../public/assets/cmasLogo.jpg";
 import Link from "next/link";
+import SwiperPartners from "@/components/SwiperPartners/SwiperPartners";
+import { PartnersInstitution } from "@/data/PartnersInstitution";
 
 const ValuesAboutImpl: ICardAbout[] = [
   {
@@ -185,6 +186,7 @@ export const About = () => {
           <p className="text-3xl mt-20 text-blueDefault font-bold text-center">
             Parceiros
           </p>
+          <SwiperPartners data={PartnersInstitution} />
         </div>
         <div className="flex flex-col gap-12">
           <p className="text-3xl text-blueDefault font-bold text-center">
