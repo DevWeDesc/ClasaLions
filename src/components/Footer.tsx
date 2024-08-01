@@ -32,15 +32,19 @@ interface IFooter {
 
 export const Footer = ({ sheeetsVisible }: IFooter) => {
   return (
-    <div className="relative w-full flex justify-between font-semibold bg-blueDefault px-24 py-10 text-white">
-      <Image src={logoFooter} alt="Logo do rodapé" className="size-32" />
-      <div className="z-10">
+    <div className="relative w-full flex gap-10 xl:gap-0 justify-between font-semibold bg-blueDefault xl:px-24 py-10 text-white">
+      <Image
+        src={logoFooter}
+        alt="Logo do rodapé"
+        className="size-16 xl:size-32"
+      />
+      <div className="z-10 text-[10px] sm:text-xs lg:text-base">
         <p>Avenida Dom Jorge Marcos de Oliveira n° 50</p>
         <p>Vila Guiomar - Santo André - SP</p>
         <p>4428-7932</p>
         <p>clasa@clasa.org.br</p>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3  text-[10px] sm:text-xs lg:text-base">
         <p>Acompanhe nosso trabalho</p>
         <div className="flex justify-center items-center gap-2">
           {SocialMediaImpl.map((socialMedia, index) => (
@@ -55,12 +59,12 @@ export const Footer = ({ sheeetsVisible }: IFooter) => {
         <>
           <Image
             src={sheetFooter}
-            className="absolute -top-20 -left-48"
+            className="hidden xl:block absolute -top-20 -left-48"
             alt=""
           />
           <Image
             src={sheetFooter}
-            className="absolute -top-20 -right-48 rotate-[115deg] bg-blue"
+            className="hidden xl:block absolute -top-20 -right-48 rotate-[115deg] bg-blue"
             alt="Logo rodapé"
           />{" "}
         </>
