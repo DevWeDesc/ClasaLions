@@ -9,7 +9,7 @@ import { PartnersData } from "@/data/PertnersData";
 export default function Home() {
   return (
     <>
-      <div className="my-32 relative mb-80 xl:mb-96">
+      <div className="mt-20 xl:my-32 relative mb-[440px] xl:mb-96">
         <Image
           className="absolute left-10"
           src={sheet}
@@ -23,8 +23,8 @@ export default function Home() {
           alt="Imagem de ilustração do lado do swiper"
         />
       </div>
-      <div className="my-32 flex flex-col items-center gap-10 relative mb-32 xl:mb-32">
-        <p className="text-5xl text-center text-blueFontHeader font-semibold">
+      <div className="xl:my-32 flex flex-col items-center xl:gap-10 relative xl:mb-32">
+        <p className="text-3xl xl:text-5xl text-center text-blueFontHeader font-semibold">
           Parceiros
         </p>
         <SwiperPartners data={PartnersData} />
