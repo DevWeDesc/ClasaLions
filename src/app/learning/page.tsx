@@ -1,16 +1,15 @@
 import { Footer } from "@/components/Footer";
-import React, { useRef } from "react";
 
 export default function Learning() {
   return (
     <>
-      <div className="my-32 px-20 flex flex-col gap-32">
-        <div className="grid grid-cols-8 gap-10">
-          <div className="col-span-6">
-            <p className="text-2xl text-blueFontHeader font-bold">
+      <div className="mt-32 mb-10 lg:my-32 lg:px-20 flex flex-col gap-10 lg:gap-32">
+        <div className="lg:grid lg:grid-cols-8 flex flex-col gap-10">
+          <div className="text-center lg:text-left lg:col-span-6 order-1">
+            <p className="text-xl lg:text-2xl text-blueFontHeader font-bold">
               O que é o Programa de aprendizagem?
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-base lg:text-xl text-blueFontHeader">
               O Programa de Aprendizagem- sócioaprendizagem visa a inserção de
               jovens no mercado de trabalho estabelecido pela Lei de
               Aprendizagem 10.097/2000, por um contrato especial de trabalho com
@@ -22,9 +21,9 @@ export default function Learning() {
               qualidade de vida.
             </p>
           </div>
-          <div className="h-full bg-blueDefault text-white rounded-2xl py-6 px-2 flex flex-col gap-4 col-span-2">
-            <p className="text-2xl font-bold text-center"> Cursos</p>
-            <ul className="list-disc ml-14 font-semibold">
+          <div className="order-3 lg:order-2 h-full bg-blueDefault text-white rounded-2xl py-6 px-2 flex flex-col gap-4 col-span-2">
+            <p className="text-xl lg:text-2xl font-bold text-center"> Cursos</p>
+            <ul className="text-base lg:text-xl list-disc ml-14 font-semibold">
               <li>administrativa;</li>
               <li>logística; </li>
               <li>produção; </li>
@@ -33,11 +32,11 @@ export default function Learning() {
               <li>varejo;</li>
             </ul>
           </div>
-          <div className="col-span-8">
-            <p className="text-2xl text-blueFontHeader font-bold">
+          <div className="text-center lg:text-left col-span-8 order-2 lg:order-3">
+            <p className="text-xl lg:text-2xl text-blueFontHeader font-bold">
               Vantagens do programa de aprendizagem
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-base lg:text-xl text-blueFontHeader">
               Além de atuar com os quesitos técnico-profissional os jovens têm a
               oportunidade de desenvolverem suas múltiplas habilidades, além de
               suas competências técnicas e praticando atividades envolvendo a
@@ -46,10 +45,9 @@ export default function Learning() {
             </p>
           </div>
         </div>
-
         <div className="flex flex-col gap-5 bg-blueDefault rounded-2xl text-white py-8 px-8 text-center">
-          <p className="text-2xl font-bold">Como ser um aprendiz?</p>
-          <p className="text-xl">
+          <p className="text-xl lg:text-2xl font-bold">Como ser um aprendiz?</p>
+          <p className="text-base lg:text-xl">
             Para tornar-se um aprendiz, deve ter idade entre 16 e 22 anos de
             idade o jovem, estar regularmente matriculado em unidade escolar da
             rede pública de ensino, frequentando a partir do 9ª ano do ensino
