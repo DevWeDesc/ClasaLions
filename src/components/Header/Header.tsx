@@ -25,7 +25,10 @@ export const Header = () => {
             : "hidden xl:flex xl:items-center xl:justify-center"
         }`}
       >
-        <NavigationMenuHeader hamburguerOpen={hamburguerOpen} />
+        <NavigationMenuHeader
+          closedHamburguer={() => setHamburguerOpen(false)}
+          hamburguerOpen={hamburguerOpen}
+        />
       </div>
 
       <div className="w-full flex gap-10 justify-center lg:justify-end items-center">

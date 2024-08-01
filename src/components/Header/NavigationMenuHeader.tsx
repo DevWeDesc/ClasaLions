@@ -19,10 +19,12 @@ import process from "process";
 
 interface INavigationMenuHeader {
   hamburguerOpen: boolean;
+  closedHamburguer: () => void;
 }
 
 export const NavigationMenuHeader = ({
   hamburguerOpen,
+  closedHamburguer,
 }: INavigationMenuHeader) => {
   const [navSelect, setNavSelected] = React.useState<string | null>(null);
 
@@ -41,7 +43,13 @@ export const NavigationMenuHeader = ({
     <NavigationMenu className="w-full h-full flex flex-col items-center justify-center">
       <NavigationMenuList className="flex-col gap-10  xl:flex-row lg:text-center">
         <NavigationMenuItem>
-          <Link onClick={() => setNavSelected("/")} href="/">
+          <Link
+            onClick={() => {
+              setNavSelected("/");
+              closedHamburguer();
+            }}
+            href="/"
+          >
             <NavigationMenuLink
               className={`${navigationMenuTriggerStyle()} ${
                 conditionalStyle("/") && "text-yellowButton"
@@ -70,21 +78,30 @@ export const NavigationMenuHeader = ({
             <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
               <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
                 <ListItem
-                  onClick={() => setNavSelected("/programs")}
+                  onClick={() => {
+                    setNavSelected("/programs");
+                    closedHamburguer();
+                  }}
                   href="/programs"
                   className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
                 >
                   Programa de integração ao mundo do trabalho - Integrar
                 </ListItem>
                 <ListItem
-                  onClick={() => setNavSelected("/programs")}
+                  onClick={() => {
+                    setNavSelected("/programs");
+                    closedHamburguer();
+                  }}
                   href="/scfv"
                   className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
                 >
                   Serviço de convivência e fortalecimento de vínculos - SCFV
                 </ListItem>
                 <ListItem
-                  onClick={() => setNavSelected("/programs")}
+                  onClick={() => {
+                    setNavSelected("/programs");
+                    closedHamburguer();
+                  }}
                   href="/learning"
                   className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
                 >
@@ -95,7 +112,7 @@ export const NavigationMenuHeader = ({
           </NavigationMenuTrigger>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/institution">
+          <Link onClick={closedHamburguer} href="/institution">
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               <div className="flex gap-1 items-center">
                 <FaBuildingColumns /> Institucional
@@ -112,6 +129,7 @@ export const NavigationMenuHeader = ({
           <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
             <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
               <ListItem
+                onClick={closedHamburguer}
                 href="/faq"
                 className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
               >
