@@ -29,10 +29,10 @@ const ValuesAboutImpl: ICardAbout[] = [
 export const About = () => {
   return (
     <div>
-      <div className="w-4/5 m-auto flex flex-col gap-28">
-        <div className="flex flex-col gap-4 text-blueFontHeader pt-24">
-          <h3 className="text-3xl font-bold">Quem somos</h3>
-          <p className="text-lg font-medium">
+      <div className="lg:w-4/5 m-auto flex flex-col gap-28">
+        <div className="flex flex-col gap-4 text-blueFontHeader pt-10 text-center lg:text-left lg:pt-24">
+          <h3 className="text-2xl lg:text-3xl font-bold">Quem somos</h3>
+          <p className="lg:text-lg font-medium">
             <strong>CLASA - Casa Lions de Adolescentes de Santo André</strong>,
             Fundada em <strong>10/07/1975</strong> administrada pelo{" "}
             <strong>
@@ -48,7 +48,7 @@ export const About = () => {
             <strong>mundo do trabalho.</strong>
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-2 m-auto">
+        <div className="grid xl:grid-cols-3 gap-2 m-auto">
           {ValuesAboutImpl.map((valueAbout, index) => (
             <CardAbout
               key={index}
@@ -57,11 +57,11 @@ export const About = () => {
             />
           ))}
         </div>
-        <div>
-          <h2 className="text-3xl font-bold text-blueFontHeader">
+        <div className="text-center lg:text-left">
+          <h2 className="text-2xl lg:text-3xl font-bold text-blueFontHeader">
             ODS - Objetivos de desenvolvimento sustentável
           </h2>
-          <p className="text-lg font-medium text-blueFontHeader">
+          <p className="lg:text-lg font-medium text-blueFontHeader">
             As ODS (Objetivos de Desenvolvimento Sustentável) são uma agenda
             global da ONU com 17 objetivos e 169 metas para serem alcançados até
             2030, visando erradicar a pobreza, proteger o planeta e garantir
@@ -80,13 +80,13 @@ export const About = () => {
         </div>
         <div className="flex flex-col gap-12">
           <div className="bg-blueDefault p-6 rounded-3xl">
-            <p className="text-2xl text-white font-bold">
+            <p className="text-xl lg:text-2xl text-white font-bold">
               É importante destacar que a instituição CLASA a instituição está
               alinhada aos cinco dos Objetivos de Desenvolvimento Sustentável
               (ODS) definidos pela Organização das Nações Unidas (ONU).
             </p>
           </div>
-          <li className="list-none text-blueFontHeader font-bold text-xl">
+          <li className="list-none text-blueFontHeader font-bold lg:text-xl">
             <ul>01 – Erradicação da Pobreza</ul>
             <ul>03 – Saúde e bem estar</ul>
             <ul>04 – Educação de Qualidade</ul>
@@ -96,30 +96,30 @@ export const About = () => {
         </div>
         <div className="flex flex-col gap-12">
           <div className="bg-blueDefault p-6 rounded-3xl">
-            <p className="text-3xl text-white font-bold text-center">
+            <p className="text-2xl lg:text-3xl text-white font-bold text-center">
               Transparência
             </p>
           </div>
-          <p className="text-xl text-blueDefault font-bold">
+          <p className="lg:text-xl text-blueDefault font-bold">
             A CLASA está comprometida com a transparência e a prestação de
             contas à comunidade. Acreditamos que a abertura e a responsabilidade
             são essenciais para construir a confiança e a legitimidade.
           </p>
           <div className="flex flex-col items-center justify-center gap-8">
-            <p className="text-2xl text-blueDefault font-bold">
+            <p className="text-xl lg:text-2xl text-blueDefault font-bold">
               Documentos importantes
             </p>
-            <div className="grid grid-cols-2 gap-20 m-auto">
+            <div className="grid grid-cols-2 gap-10 lg:gap-20 m-auto">
               <Link
                 target="_blank"
                 href="/assets/pdfs/ClasaRelatorioIgualdadeSalarial.pdf"
                 className="text-sm relative flex items-center gap-2 "
                 //  className="flex items-center gap-2 relative">
               >
-                <p className="text-blueDefault text-xl font-bold max-w-32">
+                <p className="text-blueDefault lg:text-xl font-bold max-w-32">
                   Relatório de igualdade salárial
                 </p>
-                <TbNotes className="text-yellowButton rounded-full p-2 bg-blueFontHeader text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
+                <TbNotes className="text-yellowButton rounded-full w-16 p-2 lg:w-auto bg-blueFontHeader text-4xl lg:text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
               </Link>
               <Link
                 target="_blank"
@@ -127,22 +127,22 @@ export const About = () => {
                 className="text-sm relative flex items-center gap-2 "
                 //  className="flex items-center gap-2 relative">
               >
-                <p className="text-blueDefault text-xl font-bold max-w-32">
+                <p className="text-blueDefault lg:text-xl font-bold max-w-32">
                   Relatório de atividades de 2023
                 </p>
-                <TbNotes className="text-yellowButton rounded-full p-2 bg-blueFontHeader text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
+                <TbNotes className="text-yellowButton rounded-full w-16 p-2 lg:w-auto bg-blueFontHeader text-4xl lg:text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
               </Link>
             </div>
           </div>
         </div>
         <div className="flex flex-col gap-14">
           <div className="bg-blueDefault p-6 rounded-3xl">
-            <p className="text-3xl text-white font-bold text-center">
+            <p className="text-2xl lg:text-3xl text-white font-bold text-center">
               Política de Privacidade e Proteção de Dados Pessoais <br /> (LGPD)
             </p>
           </div>
-          <div className="grid grid-cols-8 gap-10">
-            <p className="col-span-6 text-xl text-blueDefault font-bold text-center">
+          <div className="grid lg:grid-cols-8 gap-10">
+            <p className=" lg:col-span-6 lg:text-xl text-blueDefault font-bold text-center">
               Na CLASA - Casa Lions de Adolescentes de Santo André, estamos
               comprometidos com a privacidade e a proteção dos dados pessoais de
               nossos beneficiários, colaboradores, parceiros e visitantes do
@@ -153,20 +153,20 @@ export const About = () => {
             <Link
               target="_blank"
               href="/assets/pdfs/ALeiGeraldeProtecaodeDados.pdf"
-              className="col-span-2 bg-blueDefault px-6 rounded-3xl flex items-center text-white font-bold text-xl"
+              className="lg:col-span-2 bg-blueDefault px-6 py-5 lg:py-0 rounded-3xl flex items-center text-white font-bold lg:text-xl"
             >
               <p> Lei geral de proteção de dados (LGPD)</p>
-              <TbNotes className="w-32 text-yellowButton rounded-full p-2 bg-blueFontHeader text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
+              <TbNotes className="w-20 lg:w-32 text-yellowButton rounded-full p-2 bg-blueFontHeader text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
             </Link>
           </div>
         </div>
         <div>
           <div className="bg-blueDefault p-6 rounded-3xl">
-            <p className="text-3xl text-white font-bold text-center">
+            <p className="text-2xl lg:text-3xl text-white font-bold text-center">
               Certificações
             </p>
           </div>
-          <div className="flex items-center gap-24 justify-center mt-16">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24 justify-center mt-8 lg:mt-16">
             <Image
               alt=""
               src={logoCebas}
@@ -188,18 +188,18 @@ export const About = () => {
           </p>
           <SwiperPartners data={PartnersInstitution} />
         </div>
-        <div className="flex flex-col gap-12">
-          <p className="text-3xl text-blueDefault font-bold text-center">
+        <div className="flex flex-col gap-6 lg:gap-12">
+          <p className="text-2xl lg:text-3xl text-blueDefault font-bold text-center">
             Contatos
           </p>
-          <div className="bg-blueDefault p-6 rounded-full text-center text-white text-xl font-bold flex flex-col gap-2">
+          <div className="bg-blueDefault p-6 lg:rounded-full text-center text-white lg:text-xl font-bold flex flex-col gap-2">
             <p>Telefone: (11) 4428-7932</p>
             <p>Whatsapp: (11) 97399-1689</p>
             <p>Email: contato@clasa.org.br</p>
           </div>
         </div>
       </div>
-      <div className="bg-blueDefault p-6 mt-6">
+      <div className="bg-blueDefault p-6 lg:mt-6">
         <p className="text-xl text-white font-bold text-center">
           Onde estamos localizados:
         </p>

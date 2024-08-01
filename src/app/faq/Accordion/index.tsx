@@ -11,7 +11,7 @@ export function AccordionGeneric() {
     <Accordion type="single" collapsible className="w-full flex flex-col gap-6">
       <AccordionItem className="relative" value="item-1">
         <AccordionTrigger>
-          <p className="text-left">
+          <p className="text-sm lg:text-2xl text-left">
             Como ser um
             <br />
             jovem aprendiz <br />
@@ -26,7 +26,7 @@ export function AccordionGeneric() {
       </AccordionItem>
       <AccordionItem className="relative" value="item-2">
         <AccordionTrigger>
-          <p className="text-left">
+          <p className="text-sm lg:text-xl text-left">
             Entrei para o programa <br /> integrar, é certeza que <br /> serei
             empregado?
           </p>
@@ -39,7 +39,7 @@ export function AccordionGeneric() {
       </AccordionItem>
       <AccordionItem className="relative" value="item-3">
         <AccordionTrigger>
-          <p className="text-left">
+          <p className="text-sm lg:text-xl text-left">
             Precisa estar <br /> estudando para <br /> participar?
           </p>
         </AccordionTrigger>
@@ -51,7 +51,7 @@ export function AccordionGeneric() {
       </AccordionItem>
       <AccordionItem className="relative" value="item-4">
         <AccordionTrigger>
-          <p className="text-left">
+          <p className="text-sm lg:text-xl text-left">
             Como me <br /> inscrevo?
           </p>
         </AccordionTrigger>
@@ -63,7 +63,7 @@ export function AccordionGeneric() {
       </AccordionItem>
       <AccordionItem value="item-5" className="relative">
         <AccordionTrigger>
-          <p className="text-left">
+          <p className="text-sm lg:text-xl text-left">
             Ainda estou <br /> com dúvidas
           </p>
         </AccordionTrigger>
