@@ -6,10 +6,10 @@ import { About } from "./About";
 export default function Institution() {
   return (
     <>
-      <div className="mt-[92px]">
+      <div className="mt-20 lg:mt-[92px]">
         <Image
           src={imageClasa}
-          className="object-cover"
+          className="h-52 lg:h-auto object-cover"
           alt="Imagem de ilustração do lado do swiper"
         />
         <About />
