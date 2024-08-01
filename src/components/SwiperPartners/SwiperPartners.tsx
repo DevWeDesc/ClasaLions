@@ -26,8 +26,20 @@ export interface ISwiperPartners {
 
 export default function SwiperPartners({ data }: ISwiperPartners) {
   const [currentPath, setCurrentPath] = useState("");
+  const [matches, setMatches] = useState<any>();
+  const conditionWidth =
+    currentPath.includes("institution") || matches ? "100%" : "60%";
+
+  useEffect(() => {});
   useEffect(() => {
-    if (window) setCurrentPath(window?.location.pathname);
+    if (window) {
+      setCurrentPath(window?.location.pathname);
+
+      const mediaMatch = window && window.matchMedia("(max-width: 1080px)");
+      setMatches(mediaMatch.matches);
+      const handler = (e: any) => setMatches(e.matches);
+      return () => mediaMatch.removeListener(handler);
+    }
   }, []);
   return (
     <>
@@ -35,9 +47,9 @@ export default function SwiperPartners({ data }: ISwiperPartners) {
         modules={[Navigation, Autoplay]}
         navigation
         className={`mySwiperPartner`}
-        slidesPerView={3}
+        slidesPerView={matches ? 2 : 3}
         spaceBetween={50}
-        centeredSlides={true}
+        centeredSlides={matches ? false : true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -47,26 +59,23 @@ export default function SwiperPartners({ data }: ISwiperPartners) {
           {
             "--swiper-navigation-size": "26px",
             "--swiper-navigation-color": "#000",
-            width: currentPath.includes("institution") ? "100%" : "60%",
+            width: conditionWidth,
             alignItems: "center",
             justifyContent: "center",
           } as React.CSSProperties
         }
       >
-        {data.map((data, index) => {
-          console.log(data);
-          return (
-            <SwiperSlide key={index}>
-              <Image
-                className={`object-contain ${
-                  currentPath.includes("institution") ? "h-36" : "h-32"
-                } ${data?.src.toString().includes("Coop") ? "p-4" : "p-0"}`}
-                alt="Imagem do carousel"
-                src={data}
-              />
-            </SwiperSlide>
-          );
-        })}
+        {data.map((data, index) => (
+          <SwiperSlide key={index}>
+            <Image
+              className={`object-contain ${
+                currentPath.includes("institution") ? "h-36" : "h-32"
+              } ${data?.src.toString().includes("Coop") ? "p-4" : "p-0"}`}
+              alt="Imagem do carousel"
+              src={data}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

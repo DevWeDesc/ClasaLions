@@ -4,6 +4,14 @@
   padding: 0 5%;
 }
 
+@media (max-width: 1080px) {
+  .mySwiperWithBanner {
+    width: 100%;
+    height: 250px;
+    padding: 0;
+  }
+}
+
 .mySwiperWithBanner .swiper-slide {
   text-align: center;
   font-size: 18px;

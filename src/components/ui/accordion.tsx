@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "pl-16 text-2xl relative text-white font-bold flex flex-1 items-center justify-between py-6 transition-all  [&[data-state=open]>#arrow]:rotate-180",
+        "pl-4 xl:pl-16 text-2xl relative text-white font-bold flex flex-1 items-center justify-between py-6 transition-all  [&[data-state=open]>#arrow]:rotate-180",
         className
       )}
       {...props}
@@ -42,7 +42,7 @@ const AccordionTrigger = React.forwardRef<
         id="arrow"
         className="size-8 absolute right-8 shrink-0 text-white transition-transform duration-200"
       />
-      <FaQuestion className="size-20 p-2 absolute right-1/3 text-blueDefault bg-white rounded-full" />
+      <FaQuestion className="size-10 lg:size-20 p-2 absolute right-1/4 lg:right-1/3 text-blueDefault bg-white rounded-full" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -59,7 +59,7 @@ const AccordionContent = React.forwardRef<
   >
     <div
       className={cn(
-        "pb-4 pt-0 pl-16 text-lg text-blueDefault font-semibold",
+        "pb-4 pt-0 pl-4 lg:pl-16 text-base lg:text-lg text-blueDefault font-semibold",
         className
       )}
     >
