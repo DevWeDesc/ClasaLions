@@ -17,7 +17,13 @@ import { FaBuildingColumns, FaCircleQuestion } from "react-icons/fa6";
 import { IoIosHome, IoIosBook } from "react-icons/io";
 import process from "process";
 
-export const NavigationMenuHeader = () => {
+interface INavigationMenuHeader {
+  hamburguerOpen: boolean;
+}
+
+export const NavigationMenuHeader = ({
+  hamburguerOpen,
+}: INavigationMenuHeader) => {
   const [navSelect, setNavSelected] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -32,8 +38,8 @@ export const NavigationMenuHeader = () => {
   const conditionalStyle = (href: string) => navSelect === href;
 
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
+    <NavigationMenu className="w-full h-full flex flex-col items-center justify-center">
+      <NavigationMenuList className="flex-col gap-10  xl:flex-row lg:text-center">
         <NavigationMenuItem>
           <Link onClick={() => setNavSelected("/")} href="/">
             <NavigationMenuLink
@@ -42,7 +48,7 @@ export const NavigationMenuHeader = () => {
               }`}
             >
               <div className="flex gap-1 items-center relative">
-                <IoIosHome /> <p> Home</p>
+                <IoIosHome /> <p>Home</p>
                 {conditionalStyle("/") && (
                   <div className="absolute w-4/5 left-1/2 -bottom-6 -translate-x-1/2 h-1 rounded-full bg-yellowButton"></div>
                 )}
@@ -61,32 +67,32 @@ export const NavigationMenuHeader = () => {
                 <div className="absolute w-4/5 left-1/2 -bottom-6 -translate-x-1/2 h-1 rounded-full bg-yellowButton"></div>
               )}
             </div>
+            <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
+              <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
+                <ListItem
+                  onClick={() => setNavSelected("/programs")}
+                  href="/programs"
+                  className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
+                >
+                  Programa de integração ao mundo do trabalho - Integrar
+                </ListItem>
+                <ListItem
+                  onClick={() => setNavSelected("/programs")}
+                  href="/scfv"
+                  className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
+                >
+                  Serviço de convivência e fortalecimento de vínculos - SCFV
+                </ListItem>
+                <ListItem
+                  onClick={() => setNavSelected("/programs")}
+                  href="/learning"
+                  className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
+                >
+                  Programa de aprendizagem - Socioaprendizagem
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
-            <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
-              <ListItem
-                onClick={() => setNavSelected("/programs")}
-                href="/programs"
-                className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
-              >
-                Programa de integração ao mundo do trabalho - Integrar
-              </ListItem>
-              <ListItem
-                onClick={() => setNavSelected("/programs")}
-                href="/scfv"
-                className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
-              >
-                Serviço de convivência e fortalecimento de vínculos - SCFV
-              </ListItem>
-              <ListItem
-                onClick={() => setNavSelected("/programs")}
-                href="/learning"
-                className="hover:bg-white/10 cursor-pointer text-blueFontHeader font-semibold"
-              >
-                Programa de aprendizagem - Socioaprendizagem
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/institution">
@@ -103,7 +109,7 @@ export const NavigationMenuHeader = () => {
               <FaCircleQuestion /> Dúvidas frequentes
             </div>
           </NavigationMenuTrigger>
-          <NavigationMenuContent className=" bg-yellowButton border-b-4 border-b-blueDefault">
+          <NavigationMenuContent className="bg-yellowButton border-b-4 border-b-blueDefault">
             <ul className="flex flex-col w-[400px] gap-1 p-2 md:w-[500px] md:grid-cols-2 lg:w-[570px] text-blueFontHeader">
               <ListItem
                 href="/faq"
