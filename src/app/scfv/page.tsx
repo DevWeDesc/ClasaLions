@@ -4,13 +4,13 @@ import React from "react";
 export default function SCFV() {
   return (
     <>
-      <div className="my-32 px-20 flex flex-col gap-28">
+      <div className="text-center lg:text-left mt-32 mb-10 xl:my-32 xl:px-20 flex flex-col gap-28">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-4">
-            <p className="text-2xl font-bold bg-blueDefault text-white py-2 px-8 rounded-full w-fit">
+            <p className="text-xl lg:text-2xl font-bold bg-blueDefault text-white py-2 px-8 rounded-full w-fit">
               O que é o serviço de convivência?
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-base lg:text-xl text-blueFontHeader">
               O Serviço de Convivência e Fortalecimento de Vínculos – promove à
               convivência social, o fortalecimento de vínculos, a participação
               cidadã e a formação geral para o mundo do trabalho. Pautamo-nos no
@@ -24,10 +24,10 @@ export default function SCFV() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-2xl text-blueFontHeader font-bold">
+            <p className="text-xl lg:text-2xl text-blueFontHeader font-bold">
               Função social
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-base lg:text-xl text-blueFontHeader">
               Promover a socialização entre usuários e fortalecer os vínculos
               familiares e comunitários, bem como realizar trabalhar os eixos:
               Eu Comigo, Eu com os outros e Eu com a cidade, em concomitância os
@@ -36,10 +36,10 @@ export default function SCFV() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <p className="text-2xl text-blueFontHeader font-bold">
+            <p className="text-xl lg:text-2xl text-blueFontHeader font-bold">
               Como participar
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-base lg:text-xl text-blueFontHeader">
               O acesso ao SCFV sedará através procura espontânea, encaminhados
               pelos CRAS, CREAS do município, rede socioassistencial de
               serviços, demais políticas públicas e por meio dos órgão do
@@ -48,9 +48,9 @@ export default function SCFV() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 bg-blueDefault rounded-2xl text-white py-8 px-8 text-center">
-          <p className="text-2xl font-bold">Público alvo</p>
-          <p className="text-xl">
+        <div className="flex flex-col gap-5 bg-blueDefault rounded-2xl text-white py-4 px-4 lg:py-8 lg:px-8 text-center">
+          <p className="text-xl lg:text-2xl font-bold">Público alvo</p>
+          <p className="text-base lg:text-xl">
             Público Alvo: O SCFV destina-se adolescentes, com idade entre 15 e
             17 anos, sem discriminação de qualquer natureza (gênero, raça,
             etnia, religião, convicção, limitação pessoal ou outra), residentes
