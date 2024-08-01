@@ -5,13 +5,13 @@ import { AccordionGeneric } from "./Accordion";
 export default function FAQ() {
   return (
     <>
-      <div className="my-32 px-20 flex flex-col gap-32">
+      <div className="mt-32 mb-20 lg:my-32 lg:px-20 flex flex-col gap-32">
         <div className="flex flex-col gap-16">
           <div>
-            <p className="text-3xl text-blueFontHeader font-bold">
+            <p className="mb-2 text-2xl lg:text-3xl text-blueFontHeader font-bold">
               FAQ/DÚVIDAS <br /> FREQUENTES
             </p>
-            <p className="text-xl text-blueFontHeader">
+            <p className="text-lg lg:text-xl text-blueFontHeader">
               <strong>A CLASA</strong> é uma organização da sociedade civil{" "}
               <strong>(OSC) sem fins lucrativos</strong>que atua há mais de{" "}
               <strong>40 anos</strong> na promoção do desenvolvimento de{" "}
