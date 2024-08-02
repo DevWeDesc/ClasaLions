@@ -11,7 +11,7 @@ interface SocialMedia {
   href: string;
 }
 
-const SocialMediaImpl: SocialMedia[] = [
+export const SocialMediaImpl: SocialMedia[] = [
   {
     href: "https://www.instagram.com/clasa.oficial?igsh=MTR0MWZtN2NwZ2Rjcg==",
     icon: <FiInstagram className="text-2xl hover:text-white/85" />,
