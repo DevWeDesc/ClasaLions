@@ -5,7 +5,6 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
-import { FaQuestion } from "react-icons/fa6";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -16,7 +15,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "bg-blueDefault [&[data-state=closed]]:rounded-r-full [&[data-state=open]]:rounded-r-3xl",
+      "[&[data-state=closed]]:rounded-r-full [&[data-state=open]]:rounded-r-3xl",
       className
     )}
     {...props}
@@ -40,9 +39,8 @@ const AccordionTrigger = React.forwardRef<
       {children}
       <ChevronDownIcon
         id="arrow"
-        className="size-8 absolute right-8 shrink-0 text-white transition-transform duration-200"
+        className="size-8 absolute right-8 shrink-0 text-current transition-transform duration-200"
       />
-      <FaQuestion className="size-10 lg:size-20 p-2 absolute right-1/4 lg:right-1/3 text-blueDefault bg-white rounded-full" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -54,7 +52,7 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="bg-yellowButton overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     {...props}
   >
     <div

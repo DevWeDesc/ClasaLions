@@ -41,7 +41,7 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-9 w-max items-center hover:text-yellowButton focus:text-yellowButton  justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-yellowButton data-[state=open]:bg-accent/50 data-[state=open]:text-yellowButton"
+  "group inline-flex h-9 w-max items-center hover:text-yellowButton focus:text-yellowButton justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[active]:text-yellowButton data-[state=open]:bg-accent/50 data-[state=open]:text-yellowButton"
 );
 
 const NavigationMenuTrigger = React.forwardRef<
@@ -83,7 +83,9 @@ const NavigationMenuViewport = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Viewport>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Viewport>
 >(({ className, ...props }, ref) => (
-  <div className={cn("absolute left-0 top-[60px] flex justify-center")}>
+  <div
+    className={cn("absolute left-0 bottom-0 lg:top-[60px] flex justify-center")}
+  >
     <NavigationMenuPrimitive.Viewport
       className={cn(
         "origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-none bg-popover shadow data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]",

@@ -40,7 +40,7 @@ export const NavigationMenuHeader = ({
   const conditionalStyle = (href: string) => navSelect === href;
 
   return (
-    <NavigationMenu className="w-full h-full flex flex-col items-center justify-center">
+    <NavigationMenu className="hidden w-full h-full xl:flex flex-col items-center justify-center">
       <NavigationMenuList className="flex-col gap-10  xl:flex-row lg:text-center">
         <NavigationMenuItem>
           <Link
