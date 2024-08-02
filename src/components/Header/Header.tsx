@@ -5,11 +5,12 @@ import Image from "next/image";
 import { NavigationMenuHeader } from "./NavigationMenuHeader";
 import Link from "next/link";
 import { useState } from "react";
+import { NavigationMenuHeaderMobile } from "./NavigationMenuHeaderMobile";
 
 export const Header = () => {
   const [hamburguerOpen, setHamburguerOpen] = useState(false);
   return (
-    <div className="z-10 bg-white w-full fixed top-0 xl:px-5 2xl:px-10 border-b-4 border-blueDefault text-blueFontHeader grid grid-cols-3 place-items-center xl:grid-cols-4 items-center gap-10">
+    <div className="z-20 bg-white w-full fixed top-0 xl:px-5 2xl:px-10 border-b-4 border-blueDefault text-blueFontHeader grid grid-cols-3 place-items-center xl:grid-cols-4 items-center gap-10">
       <Image
         src={logoHeader}
         className="object-contain h-20 xl:h-28"
@@ -26,6 +27,10 @@ export const Header = () => {
         }`}
       >
         <NavigationMenuHeader
+          closedHamburguer={() => setHamburguerOpen(false)}
+          hamburguerOpen={hamburguerOpen}
+        />
+        <NavigationMenuHeaderMobile
           closedHamburguer={() => setHamburguerOpen(false)}
           hamburguerOpen={hamburguerOpen}
         />
@@ -49,13 +54,13 @@ export const Header = () => {
       <div
         onClick={() => setHamburguerOpen((prev) => !prev)}
         className={`xl:hidden w-8 flex flex-col gap-1 relative cursor-pointer ${
-          hamburguerOpen && "bg-blueDefault w-14 h-14 rounded-full"
+          hamburguerOpen && "bg-blueDefault w-12 h-12 rounded-full"
         }`}
       >
         <div
           className={`transition-all h-1 rounded-lg  ${
             hamburguerOpen
-              ? "rotate-45 top-1/2 -translate-y-1/2 absolute w-8 bg-white left-1/2 -translate-x-1/2"
+              ? "rotate-45 top-1/2 -translate-y-1/2 absolute w-6 bg-white left-1/2 -translate-x-1/2"
               : "w-full bg-blueFontHeader"
           }`}
         />
@@ -67,7 +72,7 @@ export const Header = () => {
         <div
           className={`transition-all h-1 rounded-lg ${
             hamburguerOpen
-              ? "-rotate-45 top-1/2 -translate-y-1/2 absolute w-8 bg-white left-1/2 -translate-x-1/2"
+              ? "-rotate-45 top-1/2 -translate-y-1/2 absolute w-6 bg-white left-1/2 -translate-x-1/2"
               : "w-full bg-blueFontHeader"
           }`}
         />
