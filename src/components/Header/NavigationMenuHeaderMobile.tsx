@@ -91,7 +91,7 @@ export const NavigationMenuHeaderMobile = ({
           onClick={() => {
             closedHamburguer();
           }}
-          href="/"
+          href="/institution"
         >
           <div className="flex gap-1 items-center">
             <FaBuildingColumns /> Institucional
@@ -102,7 +102,7 @@ export const NavigationMenuHeaderMobile = ({
           onClick={() => {
             closedHamburguer();
           }}
-          href="/"
+          href="/faq"
         >
           <div className="flex gap-1 items-center">
             <FaCircleQuestion /> Dúvidas frequentes
