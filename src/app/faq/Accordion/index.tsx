@@ -66,7 +66,7 @@ export function AccordionGeneric() {
           <div className="h-full top-3 2xl:w-[95vw] left-0 -z-10 bg-yellowButton rounded-r-3xl absolute -right-8" />
         </AccordionContent>
       </AccordionItem>
-      <AccordionItem value="bg-blueDefault  item-5" className="relative">
+      <AccordionItem value="item-5" className="bg-blueDefault relative">
         <AccordionTrigger>
           <p className="text-sm lg:text-xl text-left">
             Ainda estou <br /> com dúvidas
