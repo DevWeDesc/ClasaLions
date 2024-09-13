@@ -37,7 +37,7 @@ export const Header = () => {
       </div>
 
       <div className="w-full flex gap-10 justify-center lg:justify-end items-center">
-        <Link target="_blank" href="https://forms.gle/hhcngM3JVNEKu5vE9">
+        <Link target="_blank" href="https://sistema.clasa.org.br/p/NovoCandidato/63894819714138304">
           <Button className="text-xs lg:text-base" variant="header">
             Inscreva-se
           </Button>
