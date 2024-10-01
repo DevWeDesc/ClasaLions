@@ -116,11 +116,12 @@ export const About = () => {
                 className="text-sm relative flex items-center gap-2 "
                 //  className="flex items-center gap-2 relative">
               >
-                <p className="text-blueDefault lg:text-xl font-bold max-w-32">
-                  Relatório de igualdade salárial
+                <p className="text-blueDefault lg:text-xl text-center font-bold max-w-68">
+                  Relatório de igualdade Salarial <br /> 1º Semestre - 2024
                 </p>
                 <TbNotes className="text-yellowButton rounded-full w-16 p-2 lg:w-auto bg-blueFontHeader text-4xl lg:text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
               </Link>
+
               <Link
                 target="_blank"
                 href="/assets/pdfs/ClasaRelatoriodeAtividades2023.pdf"
@@ -129,6 +130,17 @@ export const About = () => {
               >
                 <p className="text-blueDefault lg:text-xl font-bold max-w-32">
                   Relatório de atividades de 2023
+                </p>
+                <TbNotes className="text-yellowButton rounded-full w-16 p-2 lg:w-auto bg-blueFontHeader text-4xl lg:text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
+              </Link>
+              <Link
+                target="_blank"
+                href="/assets/pdfs/ClasaRelatorio2ciclo.pdf"
+                className="text-sm relative flex items-center gap-2 "
+                //  className="flex items-center gap-2 relative">
+              >
+                <p className="text-blueDefault lg:text-xl text-center font-bold max-w-68">
+                  Relatório de igualdade Salarial <br /> 2º Semestre - 2024
                 </p>
                 <TbNotes className="text-yellowButton rounded-full w-16 p-2 lg:w-auto bg-blueFontHeader text-4xl lg:text-6xl hover:bg-blueFontHeader/85 cursor-pointer" />
               </Link>
