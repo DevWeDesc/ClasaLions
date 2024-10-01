@@ -129,7 +129,10 @@ export const NavigationMenuHeaderMobile = ({
             </div>
           </div>
           <div className="flex flex-col h-full justify-between">
-            <Link target="_blank" href="https://forms.gle/hhcngM3JVNEKu5vE9">
+            <Link
+              target="_blank"
+              href="https://clasa.conectrh.com.br/p/NovoCandidato/63894819714138304"
+            >
               <Button className="text-xs lg:text-base w-full" variant="header">
                 Inscreva-se
               </Button>
